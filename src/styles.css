@@ -1,3 +1,5 @@
 :root {}
 
-html, body {}
+html, body {
+    background: var(--f-color-surface);
+}
