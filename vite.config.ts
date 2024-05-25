@@ -15,6 +15,8 @@ export default defineConfig({
     commonjsOptions: { transformMixedEsModules: true } // Change
   },
   resolve: {
-    alias: {},
+    alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
   },
 })

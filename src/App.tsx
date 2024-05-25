@@ -1,6 +1,7 @@
-import { FoldProvider } from '@fold-dev/core'
+import { FoldProvider, View } from '@fold-dev/core'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Calendar } from './Calendar'
+import { Layout } from './Layout'
+import { Month } from './Stories'
 
 const App = (props: any) => {
     return (
@@ -9,8 +10,12 @@ const App = (props: any) => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Calendar />}
-                    />
+                        element={<Layout />}>
+                        <Route
+                            path="/month"
+                            element={<Month />}
+                        />
+                    </Route>
                 </Routes>
             </FoldProvider>
         </BrowserRouter>
