@@ -4,6 +4,7 @@ import {
     Content,
     DarkModeToggle,
     Flexer,
+    Header,
     Heading,
     LogoSolid,
     Main,
@@ -33,7 +34,7 @@ export const Layout = (props: any) => {
         return parts[parts.length - 1]
     }, [pathname])
 
-    const handleNavigation = (path: string) => navigate(`/app/${workspaceId}/${path}`)
+    const handleNavigation = (path: string) => navigate(`/${path}`)
 
     return (
         <App>
@@ -69,50 +70,71 @@ export const Layout = (props: any) => {
                         height="100%"
                         direction="horizontal">
                         <View
-                            row
-                            p="1rem"
-                            width="100%">
-                            <LogoSolid size="sm" />
-                            <Flexer />
-                            <DarkModeToggle />
+                            width="100%"
+                            height="100%"
+                            position="absolute"
+                            className="f-overflow-y-auto"
+                            style={{ inset: 0 }}>
+                            <Header
+                                row
+                                p="1rem"
+                                width="100%"
+                                position="sticky"
+                                bgToken="surface"
+                                zIndex={1000}
+                                style={{ top: 0 }}>
+                                <LogoSolid size="sm" />
+                                <Flexer />
+                                <DarkModeToggle />
+                            </Header>
+                            <Navigation width="100%">
+                                <NavigationHeading>Calendar</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('calendar-month')}>Month</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('calendar-customdays')}>CustomDays</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('calendar-schedule')}>Schedule</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('calendar-scheduleday')}>ScheduleDay</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('calendar-weekview')}>WeekView</NavigationItem>
+                                <NavigationDivider />
+                                <NavigationHeading>Common</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('common-userandlabelselect')}>UserAndLabelSelect</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('common-userindicator')}>UserIndicator</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('common-badgeindicator')}>BadgeIndicator</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('common-labelindicator')}>LabelIndicator</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('common-itemdetail')}>ItemDetail</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('common-richinputfield')}>RichInputField</NavigationItem>
+                                <NavigationDivider />
+                                <NavigationHeading>CSV Importer</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('csv-importer-csvimporterusage')}>CsvimporterUsage</NavigationItem>
+                                <NavigationDivider />
+                                <NavigationHeading>Data Grid</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('data-grid-datagridusage')}>DatagridUsage</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('data-grid-borderless')}>Borderless</NavigationItem>
+                                <NavigationDivider />
+                                <NavigationHeading>Date & Time Pickers</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-datepickerusage')}>DatepickerUsage</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-selectweek')}>SelectWeek</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-monthdisplay')}>MonthDisplay</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-monthandweekdays')}>MonthAndWeekdays</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-monthcustomdayrender')}>MonthCustomDayRender</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-customweekend')}>CustomWeekend</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-monthsdisplay')}>MonthsDisplay</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-yearsdisplay')}>YearsDisplay</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-datecellvariants')}>DateCellVariants</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-time')}>Time</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-multiplemonths')}>MultipleMonths</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-dateinputs')}>DateInputs</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-scrollingpicker')}>ScrollingPicker</NavigationItem>
+                                <NavigationItem onClick={() => handleNavigation('date-picker-datetimepicker')}>DateTimePicker</NavigationItem>
+                                <NavigationDivider />
+                                <NavigationHeading>Kanban Board</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('kanban-kanbanusage')}>KanbanUsage</NavigationItem>
+                                <NavigationDivider />
+                                <NavigationHeading>Todo List</NavigationHeading>
+                                <NavigationItem onClick={() => handleNavigation('todo-todousage')}>TodoUsage</NavigationItem>
+                                <NavigationDivider />
+
+                            </Navigation>
                         </View>
-                        <Navigation width="100%">
-                            <NavigationHeading>Todo List</NavigationHeading>
-                            <NavigationItem onClick={() => handleNavigation('todo-default')}>Default</NavigationItem>
-                            <NavigationDivider />
-
-                            <NavigationHeading>Kanban List</NavigationHeading>
-                            <NavigationItem onClick={() => handleNavigation('kanban-default')}>Default</NavigationItem>
-                            <NavigationDivider />
-
-                            <NavigationHeading>Calendar</NavigationHeading>
-                            <NavigationItem onClick={() => handleNavigation('calendar-month')}>Month</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar-custom-days')}>Custom Days</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar-schdedule')}>Schedule</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar-schedule-day')}>Schedule Day</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar-week-view')}>Week View</NavigationItem>
-                            <NavigationDivider />
-
-                            <NavigationHeading>Common</NavigationHeading>
-                            <NavigationItem onClick={() => handleNavigation('common-user-label-select')}>User & Label Select</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('common-item-detail')}>Item Detail</NavigationItem>
-                            <NavigationDivider />
-
-                            <NavigationItem onClick={() => handleNavigation('calendar')}>Kanban Board</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar')}>Calendar</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar')}>Data Grid</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar')}>CSV Importer</NavigationItem>
-                            <NavigationItem onClick={() => handleNavigation('calendar')}>Date & Time</NavigationItem>
-                            <NavigationDivider />
-                            <NavigationHeading>Common</NavigationHeading>
-                            <NavigationItem onClick={() => handleNavigation('calendar')}>User & Label Select</NavigationItem>
-                            <NavigationItem>Rich Input</NavigationItem>
-                        </Navigation>
-                        <Flexer />
-                        <View
-                            row
-                            p={10}
-                            gap={5}></View>
                     </Resizable>
                 </Sidebar>
                 <Main>

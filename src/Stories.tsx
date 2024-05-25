@@ -737,6 +737,70 @@ export const UserAndLabelSelect = () => {
 
 
 
+export const UserIndicator = () => {
+    return (
+        <View
+            row
+            gap="1rem">
+            <Users
+                onClick={() => console.log('badge clicked!')}
+                users={[
+                    { id: 'u1', name: 'John', image: '/men/01.jpg' },
+                    { id: 'u2', name: 'Ben', image: '/men/02.jpg' },
+                    { id: 'u8', name: 'Peter' },
+                ]}
+            />
+        </View>
+    )
+}
+
+
+
+
+
+
+export const BadgeIndicator = () => {
+    return (
+        <View
+            row
+            gap="1rem">
+            <Badges
+                onClick={() => console.log('badge clicked!')}
+                badges={[
+                    { icon: 'check-circle', label: '3 / 5' },
+                    { icon: 'warning', label: 'Warning', color: Token.ColorNeonpink400 },
+                    { progress: 73, color: Token.ColorTeal400 },
+                ]}
+            />
+        </View>
+    )
+}
+
+
+
+
+
+
+export const LabelIndicator = () => {
+    return (
+        <View
+            row
+            gap="1rem">
+            <Labels
+                onClick={() => console.log('badge clicked!')}
+                labels={[
+                    { id: 1, icon: 'check-circle', text: 'Task' },
+                    { id: 1, icon: 'warning', text: 'Warning', color: Token.ColorNeonpink400 },
+                ]}
+            />
+        </View>
+    )
+}
+
+
+
+
+
 
 export const ItemDetail = () => {
     const [task, setTask] = useState<any>({})
