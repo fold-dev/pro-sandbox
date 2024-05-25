@@ -38,20 +38,6 @@ export const Layout = (props: any) => {
 
     return (
         <App>
-            <Notification
-                variant="highlight"
-                display="none">
-                <NotificationContent>
-                    <Text fontWeight="bold">Connecting...</Text>
-                </NotificationContent>
-            </Notification>
-
-            <View
-                p={0}
-                width="100%"
-                bg="linear-gradient(45deg, var(--f-color-violet-600), var(--f-color-purple-600))"
-            />
-
             <Content
                 height="100%"
                 bgToken="background">
