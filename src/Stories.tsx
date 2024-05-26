@@ -189,6 +189,7 @@ export const CustomDays = () => {
     const getMenu = ({ data: { target, payload }, dismiss }) => {
         return (
             <Popup
+                colorPalette={data.colorPalette}
                 item={{ ...payload }}
                 onCancel={dismiss}
                 onSave={(event) => {
@@ -313,6 +314,7 @@ export const Schedule = () => {
     const getMenu = ({ data: { target, payload }, dismiss }) => {
         return (
             <Popup
+                colorPalette={data.colorPalette}
                 item={{ ...payload }}
                 onCancel={dismiss}
                 onSave={(event) => {
@@ -438,6 +440,7 @@ export const ScheduleDay = () => {
     const getMenu = ({ data: { target, payload }, dismiss }) => {
         return (
             <Popup
+                colorPalette={data.colorPalette}
                 item={{ ...payload }}
                 onCancel={dismiss}
                 onSave={(event) => {
@@ -566,6 +569,7 @@ export const WeekView = () => {
     const getMenu = ({ data: { target, payload }, dismiss }) => {
         return (
             <Popup
+                colorPalette={data.colorPalette}
                 item={{ ...payload }}
                 onCancel={dismiss}
                 onSave={(event) => {
@@ -2129,8 +2133,6 @@ export const KanbanUsage = () => {
                     onSwimlaneMove={handleSwimlaneMove}
                     onColumnUpdate={handleColumnUpdate}
                     onSwimlaneUpdate={handleSwimlaneUpdate}
-                    editableColumnName={true}
-                    showColumnCount={true}
                     hideCheckbox={false}
                     collapsibleColumn={true}
                     targetVariant={{ cards: 'animated', nav: 'focus' }}

@@ -74,7 +74,7 @@ export const Layout = (props: any) => {
                                 <DarkModeToggle />
                             </Header>
                             <Navigation width="100%">
-                                <NavigationHeading>Calendar</NavigationHeading>
+                            <NavigationHeading>Calendar</NavigationHeading>
                                 <NavigationItem onClick={() => handleNavigation('calendar-month')}>Month</NavigationItem>
                                 <NavigationItem onClick={() => handleNavigation('calendar-customdays')}>CustomDays</NavigationItem>
                                 <NavigationItem onClick={() => handleNavigation('calendar-schedule')}>Schedule</NavigationItem>
@@ -118,7 +118,6 @@ export const Layout = (props: any) => {
                                 <NavigationHeading>Todo List</NavigationHeading>
                                 <NavigationItem onClick={() => handleNavigation('todo-todousage')}>TodoUsage</NavigationItem>
                                 <NavigationDivider />
-
                             </Navigation>
                         </View>
                     </Resizable>
@@ -129,6 +128,9 @@ export const Layout = (props: any) => {
                         height="calc(100% - 20px)"
                         position="absolute"
                         className="f-overflow-y-auto"
+                        bgToken="surface"
+                        radius="var(--f-radius)"
+                        p={10}
                         style={{ left: 10, top: 10 }}>
                         <Outlet />
                     </View>
