@@ -15,7 +15,7 @@
   "dependencies": {
     "@fold-dev/core": "^0.10.0",
     "@fold-dev/design": "^0.10.0",
-    "@fold-pro/react": "^0.0.10",
+    "@fold-pro/react": "^0.0.11",
     "history": "^5.3.0",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
